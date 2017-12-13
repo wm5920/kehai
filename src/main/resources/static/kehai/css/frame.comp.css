@@ -1,0 +1,319 @@
+/*all*/
+a {
+    text-decoration: none!important;
+}
+.container {
+    width: 100%!important;
+}
+em, i {
+    font-style: normal;
+}
+body {
+    font-size: 14px;
+    font-family: "微软雅黑"!important;
+    color: #000;
+    margin: 0 auto;
+    min-width: 1240px;
+    box-sizing: border-box;
+}
+/*top-head*/
+.top-head{
+    width: 1000px;
+    margin: 0 auto;
+    height: 100px;
+    line-height: 100px;
+}
+.top-head .top-logo{
+    margin-left: 30px;
+    height: 50px;
+}
+.top-head .top-hot{
+    position: relative;
+}
+.top-head .top-hot i{
+    font-size: 13px;
+    color: #999;
+    font-weight: bold;
+    Letter-spacing: 2px;
+    position: absolute;
+    top: -8px;
+    left: 50px;
+}
+.top-head .top-hot b{
+    font-size: 18px;
+    color: #007ac3;
+    position: absolute;
+    top: 18px;
+    left: 24px;
+}
+
+/*nav-head*/
+.nav-head{
+    height: 56px;
+    background-color: #007ac3;
+    z-index: 9998;
+    top: 0;
+}
+.nav-head ul.nav{/*居中*/
+    width: 900px;
+    margin: 0 auto;
+}
+.nav-head ul.nav li {
+    float: left;
+    position: relative;
+}
+.nav-head ul.nav li a.nava {
+    width: 146px;
+    height: 56px;
+    line-height: 35px;
+    text-align: center;
+    color: #ffffff;
+}
+.nav-head ul.nav li .navv {
+    position: absolute;
+    width: 146px;
+    top: 56px;
+    left: 0;
+    border-top: 1px solid #083860;
+    background-color: #007ac3;
+    display: none;
+    box-shadow: 0px 3px 5px #00598f;
+}
+.nav-head ul.nav li.active a.nava {
+    background-color: #00598f;
+}
+.nav-head ul.nav li a.nava img {
+    margin-left: 15px;
+}
+.nav-head ul.nav li .navv a {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    padding: 0 15px 0 17px;
+}
+.nav-head ul.nav li .navv a:hover {
+    background-color: #00598f;
+}
+/*pic-head*/
+.pic-head{
+    height: 240px;
+    overflow: hidden;
+}
+/*content-location*/
+.content-location{
+    height: 55px;
+    border: 1px solid #e3e3e3;
+}
+.content-location p {
+    text-align: left;
+    line-height: 50px;
+    color: #666666;
+}
+/* content */
+.content{
+    padding-top: 30px;
+}
+/*content left-body*/
+.left-body{
+    margin-top: -140px;
+}
+.left-body .nei-left-tit {
+    width: 270px;
+    height: 140px;
+    background: url('../images/nei.left.bg.jpg') no-repeat center center;
+    padding-top: 33px;
+    float: right;
+    text-align: center;
+}
+.nei-left-tit i {
+    font-size: 25px;
+    color: #9abddd;
+    line-height: 28px;
+    height: 28px;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nei-left-tit b {
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    text-align: center;
+    display: block;
+}
+.nei-nav{
+    width: 270px;
+    float: right;
+}
+.nei-nav a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 30px 0 40px;
+    border-bottom: 1px solid #e3e3e3;
+    color: #232323;
+    position: relative;
+    background-color: #f0f0f0;
+    border-left: 3px solid transparent;
+}
+.nei-nav a:hover {
+    color: #232323;
+    border-left: 3px solid #007ac3;
+    background-color: #fafafa;
+}
+.nei-nav a:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 9px;
+    background: url('../images/nei-left-pic.png') no-repeat center center;
+    position: absolute;
+    right: 20px;
+    top: 26px;
+}
+.nei-nav a.active2 {
+    border-left: 3px solid #007ac3;
+    background-color: #fafafa;
+}
+.nei-nav a.active2:after{
+    width: 9px;
+    height: 10px;
+    background: url('../images/nei_left_bg3.jpg') no-repeat center center;
+}
+/*content 主内容*/
+
+.content-body{
+    line-height: 28px;
+    width: 1000px;
+    float: left;
+}
+.content-body div p
+{
+    text-indent:28px;
+    text-align:justify;
+    text-justify:inter-ideograph;
+    margin: 0 0 0px;
+}
+h1.contact-tit {
+    border-bottom: 1px solid #e3e3e3;
+    font-size: 18px;
+    color: #232323;
+    padding-bottom: 12px;
+    position: relative;
+}
+h1.contact-tit:after {
+    content: '';
+    width: 46px;
+    height: 3px;
+    background-color: #007ac3;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+}
+
+.pager {
+    margin: auto;
+    text-align: center;
+    height: 40px;
+}
+.pager span.disabled {
+    color: #999999;
+    padding: 6px 10px;
+    border: #999999 1px solid;
+}
+.pager span {
+    margin-left: 5px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: #007ac3 1px solid;
+}
+
+/*footer-body*/
+.footer-body{
+    padding: 50px 0;
+    background-color: #161a1e;
+}
+.footer-body .footer {
+    width: 1170px;
+    margin: 0 auto;
+}
+.footer-body .footer ul {
+    float: left;
+    text-align: left;
+}
+.footer-body .footer ul li {
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 60px;
+}
+.footer-body .footer .footer-right {
+    float: right;
+    width: 314px;
+}
+.footer-body .footer ul li em a{
+    display: block;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+.footer-body .footer ul li a {
+    display: block;
+    line-height: 26px;
+    height: 26px;
+    overflow: hidden;
+    color: #9f9f9f;
+}
+.footer-body .footer .footer-right em {
+    color: #ffffff;
+    display: block;
+}
+.footer-body .footer .footer-right b {
+    font-size: 26px;
+    color: #ffffff;
+    display: block;
+    margin: 13px 0 5px 0;
+}
+.footer-body .footer .footer-right span {
+    font-size: 14px;
+    color: #9f9f9f;
+    display: block;
+    margin-bottom: 12px;
+}
+.footer-body .footer .footer-right .erwei {
+    width: 80px;
+    float: left;
+    margin-right: 49px;
+}
+.footer-body .footer .footer-right .erwei p {
+    text-align: center;
+    font-size: 12px;
+    color: #babbbc;
+    margin-top: 6px;
+}
+/* bottom */
+.bbtom {
+    padding: 15px 0 12px 0;
+    background-color: #0d1114;
+}
+.bbtom p {
+    font-size: 14px;
+    color: #b9baba;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.bbtom p a {
+    color: #b9baba;
+}
+
+.col-sm-2{
+    width: 16%;
+    float: left;
+}

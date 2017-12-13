@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>氮气检测|氧气检测|天然气检测|压缩空气检测|超高纯气体检测|科海检测</title>
+    <meta name="description" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="keyword" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="baidu-site-verification" content="6XOpYZdW0d" />
+    <base href="/kehai/"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--公共部分-->
+    <script src="lib/vue.js"></script>
+    <script src="comp/frame.comp.js"></script>
+
+    <link href="css/frame.comp.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body >
+<div id="app" class="container">
+    <top-head></top-head>
+    <nav-head v-bind:menu="menu"></nav-head>
+    <pic-head v-bind:pic-head-banner="picHeadBanner"></pic-head><!--支持驼峰命名-->
+    <content-location v-bind:locations="locations"></content-location>
+    <div class="row clearfix content">
+        <left-body v-bind:left-body-name="leftBodyName" v-bind:left-body-english="leftBodyEnglish"
+                   v-bind:left-body-navs="leftBodyNavs"></left-body>
+        <div class="content-body column">
+            <p>
+                科海检验在各领域可为客户提供检测、检验、鉴定、咨询等服务。<br />
+                <br />
+                <strong>气体检测</strong><br />
+                各类工业气体、高纯气体、超高纯气体、标准气体等气体检测；<br />
+                <strong>油品检测</strong><br />
+                汽油、机油、液压油、抗燃油、柴油、导热油、燃料油、润滑油、生物油等油品检测；<br />
+                <strong>化工品检测</strong><br />
+                化肥、工业用化工品、分析纯化工品、高级纯化工品、分子筛等化工品检测；<br />
+                <strong>金属检测</strong><br />
+                成分分析、金相分析、机械性能试验、微观分析试验、腐蚀试验、无损探伤检测、失效分析、疲劳试验等金属产品检测；<br />
+                <strong>矿产类检测</strong><br />
+                煤炭、铁矿石、锰矿石、铬矿石、铜矿石、金矿石、银矿石、稀土矿等矿石类检测；<br />
+                <strong>食品及农产品检测</strong><br />
+                食品及宠物食品检测、农产品和饲料检测、烟草等产品检测；<br />
+                <strong>限量物质检测</strong><br />
+                ROHS指令、SVCH法规、AZO、PAHs、BPA、VOCs、石棉、卤素、邻苯等限量物质检测；<br />
+                <strong>高分子材料及可靠性检测</strong><br />
+                机械性能、热性能检测、燃烧测试、可靠性检测、成分分析、电学性能检测、涂料类检测等；<br />
+                <strong>阻燃测试</strong><br />
+                家具类、床上用品、帐篷睡袋、防护服类、服装面料、车辆材料、建筑材料、地板材料等阻燃等级检测；<br />
+                <strong>纺织品类测试</strong><br />
+                成分分析、结构分析、尺寸稳定性、色牢度检测、机械强度、燃烧性能、成衣及布料检测等；<br />
+                <strong>电子货物跟踪单办理</strong><br />
+                科特迪瓦BSC、尼日利亚CTN、多哥ECTN、马达加斯加BSC、安哥拉CNCA、塞内加尔（达喀尔）CTN、刚果金FERI等国家电子货物跟踪单办理；<br />
+                <strong>环境监测</strong><br />
+                <span>废水、废气、噪声、恶臭气体、土壤、危废、二噁英等环境检测。</span>
+            </p>
+            <p>
+                <br />
+                非学无以广才，非志无以成学。科海检验公司作为专业性第三方检测机构，秉承公平、公正之原则，致力于帮助各行各业客户提升产品质量及管理<br />
+                水平，有效降低风险，力图规范市场，确保交易公平，从而创造和谐安全的品质生活。
+            </p>
+                <content-page></content-page>
+        </div>
+    </div>
+    <footer-body v-bind:menu="menu"></footer-body>
+    <footer-bottom></footer-bottom>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script>
+Vue.config.debug = true;
+new Vue({
+    el: '#app',
+    data: {
+        menu:menu,
+        picHeadBanner:"images/pic.head.banner.jpg",
+        locations:["首页","关于我们"],
+        leftBodyName:"关于我们",
+        leftBodyEnglish:"ABOUT",
+        leftBodyNavs:[menu[5]]
+    },
+    methods: {
+
+    }
+});
+$(document).ready(function(e) {
+    //tnav-head
+    var liNum=5;
+    $(".nav-head .nav li:eq("+liNum+")").addClass('active');
+    $(".nav li").hover(function(){
+        $(this).find(".navv").slideDown();
+        $(this).addClass('active');
+    },function(){
+        if($(".nav li").index($(this))!=liNum){
+            $(this).removeClass('active');
+        }
+        $(this).find(".navv").stop().slideUp();
+    });
+    var win=$(window); //得到窗口对象
+    win.scroll(function(){
+        var sc_top = $(document).scrollTop();
+        if(sc_top>=100){
+            $(".nav-head").css("position","fixed");
+        }else{
+            $(".nav-head").css("position","relative");
+        }
+    })
+    //left-body
+    $(".nei-nav a:eq(0)").addClass('active2');
+});
+</script>
+</body>
+</html>

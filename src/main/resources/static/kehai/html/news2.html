@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>氮气检测|氧气检测|天然气检测|压缩空气检测|超高纯气体检测|科海检测</title>
+    <meta name="description" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="keyword" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="baidu-site-verification" content="6XOpYZdW0d" />
+    <base href="/kehai/"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--公共部分-->
+    <script src="lib/vue.js"></script>
+    <script src="comp/frame.comp.js"></script>
+
+    <link href="css/frame.comp.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body >
+<div id="app" class="container">
+    <top-head></top-head>
+    <nav-head v-bind:menu="menu"></nav-head>
+    <pic-head v-bind:pic-head-banner="picHeadBanner"></pic-head><!--支持驼峰命名-->
+    <content-location v-bind:locations="locations"></content-location>
+    <div class="row clearfix content">
+        <left-body v-bind:left-body-name="leftBodyName" v-bind:left-body-english="leftBodyEnglish"
+                   v-bind:left-body-navs="leftBodyNavs"></left-body>
+        <div class="content-body column">
+            <img src="images/newspic2.png" alt="新闻资讯" class="pprr">
+            <h1 class="contact-tit">工业CT（industrial computerized tomography）技术介绍</h1>
+            <div>
+                <p>菲尼克斯v|tome|x s 是一款多功能高分辨率系统，可用于2D X射线检测和3D CT（微米CT和纳米CT），也能实现3D测量。
+                    可同时装配2D检测和3D CT，适用于材料、地质勘探、塑料工程、传感/电气、测量工程等领域
+                    为了增加设备的灵活性，v|tome|x s能够同时装配180kV/15W的高功率纳米焦点X射线管，240kV/320W微米焦点射线管。无论是用高分辨率扫描低射线吸收率工件，还是对高射线吸收率工件进行3D分析，因为这种独特的组合模式使得该系统在广泛的应用领域中成为一个非常高效、可靠的工具。 
+                </p>
+                <p>工业CT的应用-3D CT:
+                    X射线3D CT在工业中的传统应用范围无非是对金属和塑料铸件进行检测和三维测量。然而，菲尼克斯的高分辨率X射线技术却在传感技术、电子、材料科学及其他自然科学中开辟了全新的应用领域。
+                    微焦点CT展示lambda探针的焊缝、压接连接、探头的几何分布以及陶瓷传感器的状况。</p>
+                <p>工业CT的应用-材料科学:
+                    高分辨率CT（微米CT或纳米CT）不仅能用于检测常规材料、 复合材料，陶瓷材料和烧结，还能分析地质样本和生物样本。在微米分辨率下就能对材料中成分的分布、空洞和裂痕实现三维可视化。
+                </p>
+            </div>
+            <content-page></content-page>
+        </div>
+    </div>
+    <footer-body v-bind:menu="menu"></footer-body>
+    <footer-bottom></footer-bottom>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script>
+Vue.config.debug = true;
+new Vue({
+    el: '#app',
+    data: {
+        menu:menu,
+        picHeadBanner:"images/pic.head.banner.jpg",
+        locations:["首页","新闻资讯"],
+        leftBodyName:"新闻资讯",
+        leftBodyEnglish:"NEWS",
+        leftBodyNavs:[menu[3]]
+    },
+    methods: {
+
+    }
+});
+$(document).ready(function(e) {
+    //tnav-head
+    var liNum=3;
+    $(".nav-head .nav li:eq("+liNum+")").addClass('active');
+    $(".nav li").hover(function(){
+        $(this).find(".navv").slideDown();
+        $(this).addClass('active');
+    },function(){
+        if($(".nav li").index($(this))!=liNum){
+            $(this).removeClass('active');
+        }
+        $(this).find(".navv").stop().slideUp();
+    });
+    var win=$(window); //得到窗口对象
+    win.scroll(function(){
+        var sc_top = $(document).scrollTop();
+        if(sc_top>=100){
+            $(".nav-head").css("position","fixed");
+        }else{
+            $(".nav-head").css("position","relative");
+        }
+    })
+    //left-body
+    $(".nei-nav a:eq(0)").addClass('active2');
+});
+</script>
+</body>
+</html>

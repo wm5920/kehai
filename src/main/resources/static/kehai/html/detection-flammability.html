@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>氮气检测|氧气检测|天然气检测|压缩空气检测|超高纯气体检测|科海检测</title>
+    <meta name="description" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="keyword" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="baidu-site-verification" content="6XOpYZdW0d" />
+    <base href="/kehai/"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--公共部分-->
+    <script src="lib/vue.js"></script>
+    <script src="comp/frame.comp.js"></script>
+
+    <link href="css/frame.comp.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body >
+<div id="app" class="container">
+    <top-head></top-head>
+    <nav-head v-bind:menu="menu"></nav-head>
+    <pic-head v-bind:pic-head-banner="picHeadBanner"></pic-head><!--支持驼峰命名-->
+    <content-location v-bind:locations="locations"></content-location>
+    <div class="row clearfix content">
+        <left-body v-bind:left-body-name="leftBodyName" v-bind:left-body-english="leftBodyEnglish"
+                   v-bind:left-body-navs="leftBodyNavs"></left-body>
+        <div class="content-body column">
+            <img src="images/flammability2.jpg" alt="阻燃测试" class="pprr">
+            <h1 class="contact-tit">阻燃测试</h1>
+            <div>
+                <p>家具类（BS5852、BS6807、BS7176、BSEN1021、ISO8191、ISO7176、AS/NZS4088.1、AS3744、TB116、TB117、TB133等）、床上用品（BS6807、BS EN597、BS7175、BS7177、ISO12952/16CFR1632等）、帐篷睡袋、防护服类、服装面料、车辆材料（BS 6853、DIN 5510-2、NF F16-101/16-102、TB/T 3138、UIC 564-2、NFPA 130、BSS 7238/7239、ABD 0031、美国联邦铁路管理规定2000、FAR/JAR 28.853、CCAR-25、FMVSS No.302/GB 8410/Directive 95/28/EC 、IMO FTPC）、建筑材料（DIN 4102-1(B1,B2)、EN 13501-1:2007、NF P92-507:2004、BS 476、GB 8624:2006、ASTM E84、GB 20286、GB/T 9978、BS 476-20/22）、地板材料（ASTM D2859、16 CFR 1630、16 CFR 1631、ISO 6925、BS 6307、BS 4790、BS 5287）、电子电器（GB/T 5169、IEC 60695、IEC 60332、EN 50265/50266/50267/50268、GB/T 18380、IEC 61034、IEC 60754）、玩具（AS 1647、AS/NZS ISO 8124.2）
+                </p>
+            </div>
+            <content-page></content-page>
+        </div>
+    </div>
+    <footer-body v-bind:menu="menu"></footer-body>
+    <footer-bottom></footer-bottom>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script>
+    Vue.config.debug = true;
+    new Vue({
+        el: '#app',
+        data: {
+            menu:menu,
+            picHeadBanner:"images/pic.head.banner.jpg",
+            locations:["首页","检测项目","阻燃测试"],
+            leftBodyName:"检测项目",
+            leftBodyEnglish:"DETECTION",
+            leftBodyNavs:menu[1].childs
+        },
+        methods: {
+
+        }
+    });
+    $(document).ready(function(e) {
+        //tnav-head
+        var liNum=1;
+        $(".nav-head .nav li:eq("+liNum+")").addClass('active');
+        $(".nav li").hover(function(){
+            $(this).find(".navv").slideDown();
+            $(this).addClass('active');
+        },function(){
+            if($(".nav li").index($(this))!=liNum){
+                $(this).removeClass('active');
+            }
+            $(this).find(".navv").stop().slideUp();
+        });
+        var win=$(window); //得到窗口对象
+        win.scroll(function(){
+            var sc_top = $(document).scrollTop();
+            if(sc_top>=100){
+                $(".nav-head").css("position","fixed");
+            }else{
+                $(".nav-head").css("position","relative");
+            }
+        })
+        //left-body
+        $(".nei-nav a:eq(8)").addClass('active2');
+    });
+</script>
+</body>
+</html>

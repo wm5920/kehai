@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>氮气检测|氧气检测|天然气检测|压缩空气检测|超高纯气体检测|科海检测</title>
+    <meta name="description" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="keyword" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="baidu-site-verification" content="6XOpYZdW0d" />
+    <base href="/kehai/"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--公共部分-->
+    <script src="lib/vue.js"></script>
+    <script src="comp/frame.comp.js"></script>
+
+    <link href="css/frame.comp.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jPicture.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        /*检测项目*/
+        .detectParentDiv{
+            width: 1200px;
+        }
+        .section{
+            font-size: 32px;
+            color: #232323;
+            line-height: 70px;
+            display: block;/*居中*/
+            width: 130px;/*居中*/
+            margin: auto;/*居中*/
+        }
+        .section:after {
+            content: '';
+            display: block;
+            width: 46px;
+            height: 3px;
+            background-color: #007ac3;
+            bottom: 0;
+            margin: auto;
+            left: 0;
+            right: 0;
+        }
+        .detectDiv{
+            text-align: center;
+            cursor: pointer;
+        }
+        .detectDiv span{
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .detectDiv:hover:after{
+            /*position: absolute;*/
+            bottom: 0;
+            left: 0;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #007ac3;
+        }
+        .bootstrapRowDivCenter{
+            float: none;
+            margin: auto;
+            width:1240px;
+        }
+        #detectImgDiv{
+            text-align: center;
+        }
+        #detectImgDiv img{
+            width: 1100px;
+            margin-top: 50px;
+        }
+        /*检测流程*/
+        #flowDiv{
+            height: 614px;
+            padding-top: 100px;
+            color:#ffffff;
+            background: url(images/in_flow_bg.jpg) no-repeat center center;
+        }
+        #flowDiv .section{
+            color:#ffffff;
+        }
+        #flowDiv .section:after{
+            background-color: #ffffff;
+        }
+        #flowDiv .bootstrapRowDivCenter{
+            width: 1200px;
+        }
+
+        .in_flow_tt {
+            background: url(images/in_flow_img.png) no-repeat top center;
+            width: 100%;
+            height: 162px;
+        }
+        .in_flow_tt span {
+            display: block;
+            width: 100px;
+            padding-top: 135px;
+            color: #bcd3ea;
+            font-size: 20px;
+            text-align: center;
+            float: left;
+            cursor: pointer;
+        }
+        .in_flow_cont {
+            width: 1170px;
+            margin-top: 29px;
+            margin-left: 8px;
+            margin-right: 150px;
+            position: relative;
+            background: url(images/in_flow_bg.png) repeat;
+        }
+        .in_flow_cont p {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 24px;
+            padding: 20px 28px 25px 28px;
+            display: none;
+            position: relative;
+        }
+        .in_flow_cont p img {
+            position: absolute;
+            display: block;
+            left: 0;
+            top: -9px;
+        }
+        /*新闻部分*/
+        #newsDiv .bootstrapRowDivCenter{
+            width: 1200px;
+        }
+        .newsCont{
+            height: 500px;
+        }
+        .newsCont a {
+            display: block;
+            width: 390px;
+            height: 460px;
+            float: left;
+            position: relative;
+        }
+        #newsDiv a .in_news_img {
+            width: 390px;
+            height: 230px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        #newsDiv a .in_news_img img {
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            -ms-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s;
+            width: 390px;
+            height: 230px;
+        }
+        .vcenter {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            vertical-align: middle;
+            margin: auto;
+        }
+        .in_news_img:after {
+            content: '';
+            display: block;
+            z-index: 8;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid #ffffff;
+            position: absolute;
+            bottom: 0;
+            left: 22px;
+        }
+        #newsDiv a .in_news_wen {
+            width: 390px;
+            height: 230px;
+            background-color: #ffffff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 26px 27px 0 20px;
+        }
+        .in_news_wen em {
+            font-size: 18px;
+            color: #232323;
+            display: block;
+            height: 22px;
+            line-height: 22px;
+            overflow: hidden;
+        }
+        .in_news_wen i {
+            font-size: 12px;
+            color: #999999;
+            display: block;
+            height: 16px;
+            line-height: 16px;
+            overflow: hidden;
+            margin-top: 16px;
+        }
+        .in_news_wen p {
+            font-size: 14px;
+            color: #666666;
+            display: block;
+            height: 88px;
+            line-height: 22px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        a.pre_more {
+            text-align: center;
+            width: 184px;
+            height: 45px;
+            line-height: 45px;
+            color: #ffffff;
+            font-size: 16px;
+            display: block;
+            margin: 40px auto 0 auto;
+            background-color: #007ac3;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            -ms-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s;
+        }
+        a.pre_more:hover {
+            background-color: #00598f;
+        }
+        /*图片经过放大效果*/
+        .newsCont a:hover img{
+            -webkit-transform:scale(1.1,1.1);
+            -moz-transform:scale(1.1,1.1);
+            -transform:scale(1.1,1.1);
+        }
+    </style>
+</head>
+
+<body >
+<div id="app" class="container">
+    <top-head></top-head>
+    <nav-head v-bind:menu="menu"></nav-head>
+    <div class="row clearfix">
+        <div id="imgBox" style="height: 524px;width: 100%">
+            <div>
+                <div><a href="javascript:void(0)"><img src="images/bannerps4.jpg"></a></div>
+                <!--<div><a href="#2"><img src="images/bannerps5.jpg"></a></div>
+                <div><a href="#3"><img src="images/bannerps6.jpg"></a></div>
+                <div><a href="#1"><img src="images/bannerps1.jpg"></a></div>
+                <div><a href="#2"><img src="images/bannerps2.jpg"></a></div>
+                <div><a href="#3"><img src="images/bannerps3.jpg"></a></div>-->
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix wow fadeInDown animated">
+        <div class="col-md-12 column">
+            <br/>
+            <span class="section">检测项目</span>
+            <br/>
+            <br/>
+        </div>
+    </div>
+    <div class="row clearfix" style="height: 70px;">
+        <div class="detectParentDiv column bootstrapRowDivCenter">
+            <div class="col-sm-2 column detectDiv">
+                <img src="images/detection.jpg">
+                <span>气体检测</span>
+            </div>
+            <div class="col-sm-2 column detectDiv">
+                <img src="images/detection1.jpg">
+                <span>油品检测</span>
+            </div>
+            <div class="col-sm-2 column detectDiv">
+                <img src="images/detection2.jpg">
+                <span>化工品检测</span>
+            </div>
+            <div class="col-sm-2 column detectDiv">
+                <img src="images/detection3.jpg">
+                <span>金属检测</span>
+            </div>
+            <div class="col-sm-2 column detectDiv">
+                <img src="images/detection4.jpg">
+                <span>矿产类检测</span>
+            </div>
+            <div class="col-sm-2 column detectDiv">
+                <img src="images/detection.jpg">
+                <span>食品及农产品检测</span>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row clearfix" style="height: 70px;">
+        <div class="detectParentDiv column bootstrapRowDivCenter">
+            <div class="col-sm-2 column detectDiv d2">
+                <img src="images/detection4.jpg">
+                <span>限量物质检测</span>
+            </div>
+            <div class="col-sm-2 column detectDiv d2">
+                <img src="images/detection3.jpg">
+                <span>高分子材料检测</span>
+            </div>
+            <div class="col-sm-2 column detectDiv d2">
+                <img src="images/detection.jpg">
+                <span>阻燃测试</span>
+            </div>
+            <div class="col-sm-2 column detectDiv d2">
+                <img src="images/detection1.jpg" >
+                <span>纺织品类测试</span>
+            </div>
+            <div class="col-sm-2 column detectDiv d2">
+                <img src="images/detection2.jpg">
+                <span>电子货物跟踪单办理</span>
+            </div>
+            <div class="col-sm-2 column detectDiv d2">
+                <img src="images/detection4.jpg">
+                <span>环境监测</span>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row clearfix">
+        <div id="detectImgDiv" class="detectParentDiv column bootstrapRowDivCenter">
+            <img src="images/gasps1.jpg" class="wow slideInLeft animated"/>
+            <img src="images/oilps1.jpg"  hidden />
+            <img src="images/chemicalps1.jpg"  hidden />
+            <img src="images/metalps1.jpg"  hidden />
+            <img src="images/mineps1.jpg"  hidden />
+            <img src="images/foodps1.jpg"  hidden />
+            <img src="images/limitps1.jpg"  hidden />
+            <img src="images/polymerps1.jpg"  hidden />
+            <img src="images/flammabilityps1.jpg"  hidden />
+            <img src="images/spinps1.jpg"  hidden />
+            <img src="images/elecps1.jpg"  hidden />
+            <img src="images/envps1.jpg"  hidden />
+        </div>
+    </div>-->
+    <br/>
+    <br/>
+    <div id="flowDiv" class="row clearfix">
+        <div class="bootstrapRowDivCenter">
+            <span class="section row clearfix wow fadeInDown animated">检测流程</span>
+            <br/>
+            <br/>
+            <div class="in_flow_tt clearfix">
+                <span class="" style="margin-left: 10px;">电话咨询</span>
+                <span class=""  style="margin-left: 175px;">下载申请表</span>
+                <span class=""  style="margin-left: 170px;">送样检测</span>
+                <span class=""  style="margin-left: 160px;">签约付款</span>
+                <span  style="margin-left: 170px;" class="active">领取报告</span>
+            </div>
+            <div class="in_flow_cont">
+                <p style="display: block;">
+                    <img src="images/in_flow_c.png">
+                    待样品、测试费用、委托检测协议书齐全后，参照委托检测协议书及双方沟通情况安排测试，测试周期起记日期为样品、测试费用、委托检测协议书完备后。如遇特殊情况允许变更完成时间，但检测、分析实验室会提前通知委托方。            </p>
+            </div>
+            <br/>
+        </div>
+    </div>
+    <div id="newsDiv" class="row clearfix">
+        <br/>
+        <span class="section  wow fadeInDown animated">新闻动态</span>
+        <br/>
+        <br/>
+        <div class="bootstrapRowDivCenter">
+            <div class="newsCont">
+                <a href="html/news1.html" title="江苏科海检验有限公司官网开通">
+                    <div class="in_news_wen">
+                        <em>江苏科海检验有限公司官网开通</em>
+                        <i>2017-11-6</i>
+                        <p>
+                            江苏科海检验有限公司是一家具有独立性的第三方实验室，主要从事石化、气体、金属、纺织、高分子材料以及建筑材料检测服务。拥有一批专业从事检测服务的技术人员，检测中心是按照CNAS-CL01_2006...</p>
+                    </div>
+                    <div class="in_news_img"><img src="images/newspic1.png" alt="奥氏不锈钢在不同下的腐蚀研究" class="vcenter"></div>
+                </a>
+                <a href="html/news2.html" title="工业CT（industrial computerized tomography）技术介绍">
+                    <div class="in_news_wen" style="top:0;bottom: auto">
+                        <em>工业CT（industrial computerized tomography）技术介绍</em>
+                        <i>2017-11-6</i>
+                        <p>
+                            菲尼克斯v|tome|x s 是一款多功能高分辨率系统，可用于2D X射线检测和3D CT（微米CT和纳米CT），也能实现3D测量。可同时装配2D检测和3D CT，适用于材料、地质勘探、塑料工程、传感/电气、测量... </p>
+                    </div>
+                    <div class="in_news_img" style="top:auto;bottom: 0"><img src="images/newspic2.png" alt="奥氏不锈钢在不同下的腐蚀研究" class="vcenter"></div>
+                </a>
+                <a href="html/news3.html" title="超高纯气体检测服务">
+                    <div class="in_news_img"><img src="images/newspic3.png" alt="超高纯气体检测服务" class="vcenter"></div>
+                    <div class="in_news_wen">
+                        <em>超高纯气体检测服务</em>
+                        <i>2017-11-6</i>
+                        <p>
+                            科海检验为您提供专业气体检验，可以检测以下气体：高纯氮气，高纯氢气，高纯氦气，高纯氧气，高纯二氧化碳，高纯氩气，高纯氨气，7N 超纯氨气，六氟化硫，八氟环丁烷，硅烷，磷烷，氯化氢... </p>
+                    </div>
+                </a>
+            </div>
+            <a href="news.html" class="pre_more">更多咨询动态<img src="images/ser-pic.png" style="margin-left: 5px;"> </a>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+    </div>
+
+
+    <a style="position: fixed;bottom: 10px;right: 10px;z-index: 10"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=29527332&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:29527332:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+
+    <!--<a style="position: fixed;bottom: 10px;right: 10px;z-index: 10" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=320602725&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:320602725:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>-->
+    <footer-body v-bind:menu="menu"></footer-body>
+    <footer-bottom></footer-bottom>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/jPicture.min.js"></script>
+<script src="lib/wow.js"></script>
+<script>
+    Vue.config.debug = true;
+    new Vue({
+        el: '#app',
+        data: {
+            menu:menu,
+            picHeadBanner:"images/pic.head.banner.jpg",
+        },
+        methods: {
+
+        }
+    });
+    $(document).ready(function(e) {
+        //tnav-head
+        var liNum=0;
+        $(".nav-head .nav li:eq("+liNum+")").addClass('active');
+        $(".nav li").hover(function(){
+            $(this).find(".navv").slideDown();
+            $(this).addClass('active');
+        },function(){
+            if($(".nav li").index($(this))!=liNum){
+                $(this).removeClass('active');
+            }
+            $(this).find(".navv").stop().slideUp();
+        });
+        var win=$(window); //得到窗口对象
+        win.scroll(function(){
+            var sc_top = $(document).scrollTop();
+            if(sc_top>=100){
+                $(".nav-head").css("position","fixed");
+            }else{
+                $(".nav-head").css("position","relative");
+            }
+        })
+        //轮播
+        jPicture("#imgBox", {
+            type: "slide",
+            autoplay: 5000
+        });
+        //wow进入效果
+        var wow=new WOW();
+        wow.init();
+        /*$(".detectDiv").click(function(){
+            log("点击事件1",$(this).index());
+            var index=$(this).index();
+            if($(this).hasClass("d2")){
+                index=index+6;
+            }
+            $("#detectImgDiv img:eq("+index+")").fadeIn();
+            $("#detectImgDiv img:not(:eq("+index+"))").hide();
+        });*/
+    });
+</script>
+</body>
+</html>

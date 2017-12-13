@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>氮气检测|氧气检测|天然气检测|压缩空气检测|超高纯气体检测|科海检测</title>
+    <meta name="description" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="keyword" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="baidu-site-verification" content="6XOpYZdW0d" />
+    <base href="/kehai/"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--公共部分-->
+    <script src="lib/vue.js"></script>
+    <script src="comp/frame.comp.js"></script>
+
+    <link href="css/frame.comp.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body >
+<div id="app" class="container">
+    <top-head></top-head>
+    <nav-head v-bind:menu="menu"></nav-head>
+    <pic-head v-bind:pic-head-banner="picHeadBanner"></pic-head><!--支持驼峰命名-->
+    <content-location v-bind:locations="locations"></content-location>
+    <div class="row clearfix content">
+        <left-body v-bind:left-body-name="leftBodyName" v-bind:left-body-english="leftBodyEnglish"
+                   v-bind:left-body-navs="leftBodyNavs"></left-body>
+        <div class="content-body column">
+            <img src="images/newspic3.png" alt="新闻资讯" class="pprr">
+            <h1 class="contact-tit">超高纯气体检测服务</h1>
+            <div>
+                <p>科海检验为您提供专业气体检验，可以检测以下气体：高纯氮气，高纯氢气，高纯氦气，高纯氧气，高纯二氧化碳，高纯氩气，高纯氨气，7N 超纯氨气，六氟化硫，八氟环丁烷，硅烷，磷烷，氯化氢，四氟化碳，甲烷，乙烷，丙烷，乙烯，丙烯，丁烯，乙炔，丙炔，甲基丙炔，液化石油气，液化天然气，氧气，氮气，氢气，氦气，丁二烯，1,3—丁二烯空气等气体。主要测试项目有：气体的纯度，溶解度，总硫，总氯，过氧化物，露点，总醛，羰基含量，铁，总金属扥测试；其中组分中的杂质一氧化碳，二氧化碳，氧气，甲烷，非甲烷烷烃，氢气和氮气等分析与测试。
+                </p><p>我司有美国高麦仪器公司生产的GOW-MAC592气象色谱，能够满足工业气体，高纯气体以及超高纯气体的纯度检测。
+            </p><p>美国高麦仪器公司坐落于美国宾西法尼亚洲的伯利恒市，是一家专注于气相色谱仪、与气相色谱相关的检测器及配套部件等气体分析仪器的研发、制造并提供气体分析服务的专业高技术企业。592系列气相色谱仪配有专利的放电离子化检测器（DID）、使得其具有分析高纯气体中十亿分之一水平（ppb）的痕量杂质的能力。超纯专业气体、电子和工业气体制造商正在成功地使用592系列放电离子化气相色谱仪来分析气体中十亿分之一水平的杂质。
+            </p>
+                    <h4>仪器参数：</h4>
+                    <p>放电离子化检测器（DID）—无选择性、无辐射、普适性和浓度依赖性 </p>
+                    <p>检测器灵敏度：＜10 ppb CH4 </p>
+                    <p>检测器线性：＞105 </p>
+                    <p>线性范围：＜5 ppb到＜1%(体积含量)</p>
+                <p>高分析精度：±1% 全量程</p>
+                    <p>输出：4-20mA（可选）;0-1mV </p>
+                    <p>氦气保护消除系统玷污并提高系统灵敏度 </p>
+                    <p>波纹管阀刻度阀门可对载气流量与检测器放电气体流量精确控制 </p>
+                    <p>可选择标准或抗腐蚀系统安装;台式或19英寸支架 </p>
+                   <p> 在线监视并且通过软件或连接工作站操纵阀门 </p>
+                    <p>电源：220V，60Hz</p>
+            </div>
+            <content-page></content-page>
+        </div>
+    </div>
+    <footer-body v-bind:menu="menu"></footer-body>
+    <footer-bottom></footer-bottom>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script>
+Vue.config.debug = true;
+new Vue({
+    el: '#app',
+    data: {
+        menu:menu,
+        picHeadBanner:"images/pic.head.banner.jpg",
+        locations:["首页","新闻资讯"],
+        leftBodyName:"新闻资讯",
+        leftBodyEnglish:"NEWS",
+        leftBodyNavs:[menu[3]]
+    },
+    methods: {
+
+    }
+});
+$(document).ready(function(e) {
+    //tnav-head
+    var liNum=3;
+    $(".nav-head .nav li:eq("+liNum+")").addClass('active');
+    $(".nav li").hover(function(){
+        $(this).find(".navv").slideDown();
+        $(this).addClass('active');
+    },function(){
+        if($(".nav li").index($(this))!=liNum){
+            $(this).removeClass('active');
+        }
+        $(this).find(".navv").stop().slideUp();
+    });
+    var win=$(window); //得到窗口对象
+    win.scroll(function(){
+        var sc_top = $(document).scrollTop();
+        if(sc_top>=100){
+            $(".nav-head").css("position","fixed");
+        }else{
+            $(".nav-head").css("position","relative");
+        }
+    })
+    //left-body
+    $(".nei-nav a:eq(0)").addClass('active2');
+});
+</script>
+</body>
+</html>

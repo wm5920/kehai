@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>氮气检测|氧气检测|天然气检测|压缩空气检测|超高纯气体检测|科海检测</title>
+    <meta name="description" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="keyword" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="baidu-site-verification" content="6XOpYZdW0d" />
+    <base href="/kehai/"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--公共部分-->
+    <script src="lib/vue.js"></script>
+    <script src="comp/frame.comp.js"></script>
+
+    <link href="css/frame.comp.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body >
+<div id="app" class="container">
+    <top-head></top-head>
+    <nav-head v-bind:menu="menu"></nav-head>
+    <pic-head v-bind:pic-head-banner="picHeadBanner"></pic-head><!--支持驼峰命名-->
+    <content-location v-bind:locations="locations"></content-location>
+    <div class="row clearfix content">
+        <left-body v-bind:left-body-name="leftBodyName" v-bind:left-body-english="leftBodyEnglish"
+                   v-bind:left-body-navs="leftBodyNavs"></left-body>
+        <div class="content-body column">
+            <img src="images/chemical22.png" alt="化工品检测" class="pprr">
+            <h1 class="contact-tit">化工品检测</h1>
+            <div>
+                <p>醇类，烷烃类，酸类，脂类，酮类，醛类，碱类，胺类，酚类等。
+                    醇类：甲醇，乙醇，丙醇，异丙醇，甘油，环己醇，辛醇，二乙二醇，硫醇。
+                    烷烃类：丁烷，庚烷，环己烷，辛烷，异辛烷，环氧丙烷，壬烷，硅烷类等。
+                    酸类：甲酸，乙酸，丙酸，乳酸，己二酸，盐酸，硝酸，硫酸，甲基丙烯酸。
+                    脂类：醋酸乙酯，醋酸乙烯酯，环氧树脂，醋酸甲酯，甘油酯，二乙二酯等。
+                    酮类：环己酮，丙酮，丁酮，N 甲基吡咯烷酮，吡咯烷酮，环己二酮，庚酮等。
+                    醛类：甲醛，乙醛，丙醛，丁醛，糠醛，肉桂醛，已烯醛，乙二醛，苯甲醛等。
+                    碱类：氢氧化钾，氢氧化钠，氢氧化锂，氢氧化钙，石灰水，氨水，液态氨等。
+                    胺类：苯胺，二甲胺，环己胺，环己二胺，三甲胺，己二胺，己内酰胺类等。
+                    苯类：甲苯，二甲苯，苯，三甲苯，乙基苯，异丙苯，邻/间/对二甲苯等多种笨。
+                    酚类：苯酚，溴甲基苯酚，领苯二甲酚，溴甲基酚，溴甲基芬兰，溴甲基芬绿。
+                    Others:D40/D80/SNL/SNM/PPG/BA/MMA/VV/PO/PEG/MEG/DEG/BA/HEA/2-H
+                    EA/GMC/LO/BO/GAA/EOH/MEOH/VAM/AA/HQ/ETH/BEN/TOL/PX/OX/MX/D
+                    OP/DINP/DIDP/2-PH/MEOH/EOH/NMP/NP…………(and so on).</p>
+                <p>主要测试石油化工品的：水分，色度，纯度，高锰酸钾氧化时间，微量金属，
+                    结晶点，沸程，酸值，碱值，电导率，密度，比重，有机氯，总氯，氨值，总
+                    硫，总氮，水互溶性，不挥发物，折光率，溶解度，粘度，氧化稳定性，碘值，
+                    酒精度，重金属，残炭，机械杂质，灰分，混合苯胺点，苯胺点，粘度，粘度
+                    指数，环氧当量，水解氯，溴指数，醛值，酸洗色，博士试验，阻聚剂含量，
+                    含量，组成，百分比，沸程，回收率，击穿电压，击穿损耗，非芳烃，芳烃，残留和挥发百分比,
+                    Ben,Tol,EB,Px,Ox,mX,SM,PNL,TVOC 等。
+                </p>
+            </div>
+            <content-page></content-page>
+        </div>
+    </div>
+    <footer-body v-bind:menu="menu"></footer-body>
+    <footer-bottom></footer-bottom>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script>
+    Vue.config.debug = true;
+    new Vue({
+        el: '#app',
+        data: {
+            menu:menu,
+            picHeadBanner:"images/pic.head.banner.jpg",
+            locations:["首页","检测项目","化工品检测"],
+            leftBodyName:"检测项目",
+            leftBodyEnglish:"DETECTION",
+            leftBodyNavs:menu[1].childs
+        },
+        methods: {
+
+        }
+    });
+    $(document).ready(function(e) {
+        //tnav-head
+        var liNum=1;
+        $(".nav-head .nav li:eq("+liNum+")").addClass('active');
+        $(".nav li").hover(function(){
+            $(this).find(".navv").slideDown();
+            $(this).addClass('active');
+        },function(){
+            if($(".nav li").index($(this))!=liNum){
+                $(this).removeClass('active');
+            }
+            $(this).find(".navv").stop().slideUp();
+        });
+        var win=$(window); //得到窗口对象
+        win.scroll(function(){
+            var sc_top = $(document).scrollTop();
+            if(sc_top>=100){
+                $(".nav-head").css("position","fixed");
+            }else{
+                $(".nav-head").css("position","relative");
+            }
+        })
+        //left-body
+        $(".nei-nav a:eq(2)").addClass('active2');
+    });
+</script>
+</body>
+</html>

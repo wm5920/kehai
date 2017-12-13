@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>氮气检测|氧气检测|天然气检测|压缩空气检测|超高纯气体检测|科海检测</title>
+    <meta name="description" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="keyword" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="baidu-site-verification" content="6XOpYZdW0d" />
+    <base href="/kehai/"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--公共部分-->
+    <script src="lib/vue.js"></script>
+    <script src="comp/frame.comp.js"></script>
+
+    <link href="css/frame.comp.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body >
+<div id="app" class="container">
+    <top-head></top-head>
+    <nav-head v-bind:menu="menu"></nav-head>
+    <pic-head v-bind:pic-head-banner="picHeadBanner"></pic-head><!--支持驼峰命名-->
+    <content-location v-bind:locations="locations"></content-location>
+    <div class="row clearfix content">
+        <left-body v-bind:left-body-name="leftBodyName" v-bind:left-body-english="leftBodyEnglish"
+                   v-bind:left-body-navs="leftBodyNavs"></left-body>
+        <div class="content-body column">
+            <p>
+                <strong>岗位1.客服</strong><br />
+                <br />
+                部门：客服部<br />
+                工作地点：无锡<br />
+                岗位职责：<br />
+                1．负责开案、结案、开票、测试跟进、寄报告发票与样品等工作；<br />
+                2．负责测试咨询的工作，包括业务和客户的测试咨询及报价；<br />
+                3．协调业务、客户和实验室之间的工作，包括开案后续的跟进，测试异常处理等；<br />
+                4．完成上级领导安排的其他工作。<br />
+                任职要求：<br />
+                1．大专及以上学历，电子商务、材料相关专业优先；<br />
+                2．性格温和，条理性强，具有良好的沟通能力，抗压能力强；<br />
+                3．有一定的学习能力，能够自主学习相关专业知识；<br />
+                4．熟悉基本商务礼仪，邮件礼仪和电话礼仪；<br />
+                5．熟练应用office办公软件。<br />
+                <br />
+                <strong>岗位2：高级销售工程师</strong><br />
+                <br />
+                部门：业务部<br />
+                工作地点：无锡<br />
+                岗位职责：<br />
+                1、开发并维护检测业务；<br />
+                2、协助完成团队销售任务，顺理市场资源，合理有效开发渠道资源；<br />
+                3、负责市场渠道开拓与销售工作，执行并完成公司产品年度销售计划；<br />
+                4、负责所管辖市场区域内的客户联络和服务工作；<br />
+                5、及时了解、跟踪、掌握自身负责项目的进度。<br />
+                任职要求：<br />
+                1、大专或以上学历，环境、医学、市场营销等相关专业；<br />
+                2、3年以销售经验或1年以上销售管理工作经验；<br />
+                3、能独立完成招投标的各项工作，能把握报价、议价及达成业务合作的关键节点，对销售数据敏感；<br />
+                4、有第三方检测行业销售工作经验优先考虑；<br />
+                5、性格开朗，积极乐观，能够承受一定的工作压力。<br />
+                <br />
+                <strong>岗位3：采样员</strong><br />
+                <br />
+                部门：实验室<br />
+                工作地点：无锡<br />
+                岗位职责：<br />
+                1、按照工作安排协助技术人员或工程师完成采样工作；<br />
+                2、按照技术人员或工程师的要求操作采样仪器采集样品或检测数据；<br />
+                3、负责填写采样现场原始记录和数据，并确保数据的完整和准确。<br />
+                任职要求：<br />
+                1、年龄20~40周岁；<br />
+                2、大专及以上学历，环境监测、化学类相关专业优先；<br />
+                3、能适应频繁出差和外地住宿，身体健康，不能恐高或晕车；<br />
+                4、具备良好的沟通能力和高度的责任感，做事认真细致，能吃苦耐劳。
+            </p>
+            <p>
+                <br />
+            </p>
+            <content-page></content-page>
+        </div>
+    </div>
+    <footer-body v-bind:menu="menu"></footer-body>
+    <footer-bottom></footer-bottom>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script>
+Vue.config.debug = true;
+new Vue({
+    el: '#app',
+    data: {
+        menu:menu,
+        picHeadBanner:"images/pic.head.banner.jpg",
+        locations:["首页","招贤纳士"],
+        leftBodyName:"招贤纳士",
+        leftBodyEnglish:"RECRUIT",
+        leftBodyNavs:[menu[4]]
+    },
+    methods: {
+
+    }
+});
+$(document).ready(function(e) {
+    //tnav-head
+    var liNum=4;
+    $(".nav-head .nav li:eq("+liNum+")").addClass('active');
+    $(".nav li").hover(function(){
+        $(this).find(".navv").slideDown();
+        $(this).addClass('active');
+    },function(){
+        if($(".nav li").index($(this))!=liNum){
+            $(this).removeClass('active');
+        }
+        $(this).find(".navv").stop().slideUp();
+    });
+    var win=$(window); //得到窗口对象
+    win.scroll(function(){
+        var sc_top = $(document).scrollTop();
+        if(sc_top>=100){
+            $(".nav-head").css("position","fixed");
+        }else{
+            $(".nav-head").css("position","relative");
+        }
+    })
+    //left-body
+    $(".nei-nav a:eq(0)").addClass('active2');
+});
+</script>
+</body>
+</html>

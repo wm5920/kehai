@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>氮气检测|氧气检测|天然气检测|压缩空气检测|超高纯气体检测|科海检测</title>
+    <meta name="description" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="keyword" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="baidu-site-verification" content="6XOpYZdW0d" />
+    <base href="/kehai/"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--公共部分-->
+    <script src="lib/vue.js"></script>
+    <script src="comp/frame.comp.js"></script>
+
+    <link href="css/frame.comp.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body >
+<div id="app" class="container">
+    <top-head></top-head>
+    <nav-head v-bind:menu="menu"></nav-head>
+    <pic-head v-bind:pic-head-banner="picHeadBanner"></pic-head><!--支持驼峰命名-->
+    <content-location v-bind:locations="locations"></content-location>
+    <div class="row clearfix content">
+        <left-body v-bind:left-body-name="leftBodyName" v-bind:left-body-english="leftBodyEnglish"
+                   v-bind:left-body-navs="leftBodyNavs"></left-body>
+        <div class="content-body column">
+            <img src="images/newspic1.png" alt="新闻资讯" class="pprr">
+            <h1 class="contact-tit">江苏科海检验有限公司官网开通</h1>
+            <div>
+                <p>江苏科海检验有限公司是一家具有独立性的第三方实验室，主要从事石化、气体、金属、纺织、高分子材料以及建筑材料检测服务。拥有一批专业从事检测服务的技术人员，检测中心是按照CNAS-CL01_2006《检测和校准实验室能力认可准则》要求建立的专业第三方检测机构。
+                </p>
+                <p>在高科技迅猛发展的21世纪，质量是灵魂，追求质量的完善是永恒的主题。为保证质量体系持续的适宜性、充分性和有效性，最大限度的满足客户的需求，提升企业的能力和形象，选择通过第三方检测是众多企业的首要选择。
+            </p>
+                <p>非学无以广才，非志无以成学。科海检验公司作为专业性第三方检测机构，秉承公平、公正之原则，致力于帮助各行各业客户提升产品质量及管理水平，有效降低风险，力图规范市场，确保交易公平，从而创造和谐安全的品质生活！
+                </p>
+            </div>
+            <content-page></content-page>
+        </div>
+    </div>
+    <footer-body v-bind:menu="menu"></footer-body>
+    <footer-bottom></footer-bottom>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script>
+Vue.config.debug = true;
+new Vue({
+    el: '#app',
+    data: {
+        menu:menu,
+        picHeadBanner:"images/pic.head.banner.jpg",
+        locations:["首页","新闻资讯"],
+        leftBodyName:"新闻资讯",
+        leftBodyEnglish:"NEWS",
+        leftBodyNavs:[menu[3]]
+    },
+    methods: {
+
+    }
+});
+$(document).ready(function(e) {
+    //tnav-head
+    var liNum=3;
+    $(".nav-head .nav li:eq("+liNum+")").addClass('active');
+    $(".nav li").hover(function(){
+        $(this).find(".navv").slideDown();
+        $(this).addClass('active');
+    },function(){
+        if($(".nav li").index($(this))!=liNum){
+            $(this).removeClass('active');
+        }
+        $(this).find(".navv").stop().slideUp();
+    });
+    var win=$(window); //得到窗口对象
+    win.scroll(function(){
+        var sc_top = $(document).scrollTop();
+        if(sc_top>=100){
+            $(".nav-head").css("position","fixed");
+        }else{
+            $(".nav-head").css("position","relative");
+        }
+    })
+    //left-body
+    $(".nei-nav a:eq(0)").addClass('active2');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>氮气检测|氧气检测|天然气检测|压缩空气检测|超高纯气体检测|科海检测</title>
+    <meta name="description" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="keyword" content="氮气检测,氧气检测,天然气检测,压缩空气检测,超高纯气体检测,科海检测">
+    <meta name="baidu-site-verification" content="6XOpYZdW0d" />
+    <base href="/kehai/"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--公共部分-->
+    <script src="lib/vue.js"></script>
+    <script src="comp/frame.comp.js"></script>
+
+    <link href="css/frame.comp.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body >
+<div id="app" class="container">
+    <top-head></top-head>
+    <nav-head v-bind:menu="menu"></nav-head>
+    <pic-head v-bind:pic-head-banner="picHeadBanner"></pic-head><!--支持驼峰命名-->
+    <content-location v-bind:locations="locations"></content-location>
+    <div class="row clearfix content">
+        <left-body v-bind:left-body-name="leftBodyName" v-bind:left-body-english="leftBodyEnglish"
+                   v-bind:left-body-navs="leftBodyNavs"></left-body>
+        <div class="content-body column">
+            <img src="images/food2.jpg" alt="食品及农产品检测" class="pprr">
+            <h1 class="contact-tit">食品及农产品检测</h1>
+            <div>
+                <p>食品及宠物食品检测、农产品和饲料检测、烟草等产品检测；主要检测项目有：微生物测试、理化测试、放射性测试、感官测试、食品标签审核、动物纤维测试、转基因/物种鉴定/过敏源检测、食品安全快速测试、农药残留、抗生素残留、食品包装材料检测、氨基酸分析等。
+                </p>
+            </div>
+            <content-page></content-page>
+        </div>
+    </div>
+    <footer-body v-bind:menu="menu"></footer-body>
+    <footer-bottom></footer-bottom>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script>
+    Vue.config.debug = true;
+    new Vue({
+        el: '#app',
+        data: {
+            menu:menu,
+            picHeadBanner:"images/pic.head.banner.jpg",
+            locations:["首页","检测项目","食品及农产品检测"],
+            leftBodyName:"检测项目",
+            leftBodyEnglish:"DETECTION",
+            leftBodyNavs:menu[1].childs
+        },
+        methods: {
+
+        }
+    });
+    $(document).ready(function(e) {
+        //tnav-head
+        var liNum=1;
+        $(".nav-head .nav li:eq("+liNum+")").addClass('active');
+        $(".nav li").hover(function(){
+            $(this).find(".navv").slideDown();
+            $(this).addClass('active');
+        },function(){
+            if($(".nav li").index($(this))!=liNum){
+                $(this).removeClass('active');
+            }
+            $(this).find(".navv").stop().slideUp();
+        });
+        var win=$(window); //得到窗口对象
+        win.scroll(function(){
+            var sc_top = $(document).scrollTop();
+            if(sc_top>=100){
+                $(".nav-head").css("position","fixed");
+            }else{
+                $(".nav-head").css("position","relative");
+            }
+        })
+        //left-body
+        $(".nei-nav a:eq(5)").addClass('active2');
+    });
+</script>
+</body>
+</html>
